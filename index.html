@@ -143,7 +143,7 @@ function checkAnswer(){
     }
 }
 
-// Slideshow ak loop
+// Slideshow ak loop, chak foto rete 5 segond epi disparèt
 function startSlideshowLoop(){
     const photos = [
         document.getElementById("photo1"),
@@ -173,10 +173,13 @@ function startSlideshowLoop(){
         setTimeout(()=>{
             photos[2].style.animation = "slideUp 1s forwards";
             startHearts(); // kòmanse emoji pandan foto 3 vizib
+            setTimeout(()=>{
+                photos[2].style.animation = "slideDown 1s forwards";
+            },5000);
         }, 11000);
 
-        // Rekòmanse loop apre tout foto fini (~18s)
-        setTimeout(runSlideshow, 18000);
+        // Rekòmanse loop apre tout foto fini (~16.5s)
+        setTimeout(runSlideshow, 16500);
     }
 
     runSlideshow();
